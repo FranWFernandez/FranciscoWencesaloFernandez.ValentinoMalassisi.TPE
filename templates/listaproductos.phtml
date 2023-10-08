@@ -1,0 +1,20 @@
+<?php require 'templates/header.phtml' ?>
+
+<?php require 'templates/form_productos.phtml' ?>
+
+<ul class="list-group">
+<?php foreach($productos as $producto): ?>
+        <div>
+            <b><?= $producto->producto ?></b> | (Precio <?= $producto->precio?>) | (Talle <?= $producto->talle ?>)
+        </div>
+        <div class="actions">
+            <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+        </div>
+    </li>
+<?php endforeach ?>
+</ul>
+
+<p class="mt-3"><small>Mostrando <?=$count?> productos</small></p>
+
+
+<?php require 'templates/footer.phtml' ?>
