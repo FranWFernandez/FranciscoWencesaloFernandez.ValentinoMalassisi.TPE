@@ -24,13 +24,16 @@ class ProductosController {
         $producto = $_POST['producto'];
         $precio = $_POST['precio'];
         $talle = $_POST['talle'];
+        $id_categoria = $_POST['id_categoria'];
+        $id_marca = $_POST['id_marca'];
+
 
         if (empty($producto) || empty($talle)) {
             $this->view->showError("Debe completar todos los campos");
             return;
         }
 
-        $id = $this->model->insertProducto($producto, $precio, $talle);
+        $id = $this->model->insertProducto($producto, $precio, $talle, $id_categoria, $id_marca);
         if ($id) {
             header('Location: ' . BASE_URL);
         } else {

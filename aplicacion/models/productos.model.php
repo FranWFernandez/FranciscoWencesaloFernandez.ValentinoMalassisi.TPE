@@ -19,9 +19,9 @@ class ProductosModel {
     }
 
 
-    function insertProducto($producto, $precio, $talle) {
-        $query = $this->db->prepare('INSERT INTO productos (producto, precio, talle) VALUES(?,?,?)');
-        $query->execute([$producto, $precio, $talle]);
+    function insertProducto($producto, $precio, $talle, $id_categoria, $id_marca) {
+        $query = $this->db->prepare('INSERT INTO productos (producto, precio, talle, id_categoria, id_marca) VALUES(?,?,?,?,?)');
+        $query->execute([$producto, $precio, $talle, $id_categoria, $id_marca]);
 
         return $this->db->lastInsertId();
     }
