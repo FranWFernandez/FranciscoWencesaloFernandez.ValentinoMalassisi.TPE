@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2023 a las 22:46:24
+-- Tiempo de generación: 10-10-2023 a las 03:05:33
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -79,18 +79,17 @@ CREATE TABLE `productos` (
   `id_marca` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `productos`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-INSERT INTO `productos` (`id_producto`, `Producto`, `Precio`, `Talle`, `id_categoria`, `id_marca`) VALUES
-(1, 'Botines', 500, NULL, 1, 1),
-(2, 'Botines', 600, NULL, 1, 2),
-(3, 'Botines', 700, NULL, 1, 3),
-(4, 'Urbanas', 500, NULL, 2, 1),
-(5, 'Urbanas', 600, NULL, 2, 4),
-(11, 'Urbanas', 10000, NULL, 2, 5),
-(12, 'Deportivas', 800, NULL, 3, 6);
+CREATE TABLE `usuarios` (
+  `USER_ID` int(200) NOT NULL,
+  `USER_EMAIL` varchar(45) NOT NULL,
+  `PASSWORD` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -117,6 +116,12 @@ ALTER TABLE `productos`
   ADD KEY `fk_id_marca` (`id_marca`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`USER_ID`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -137,6 +142,12 @@ ALTER TABLE `marcas`
 --
 ALTER TABLE `productos`
   MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `USER_ID` int(200) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
