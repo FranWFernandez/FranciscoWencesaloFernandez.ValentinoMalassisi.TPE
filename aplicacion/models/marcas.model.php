@@ -1,12 +1,10 @@
 <?php
 
-require_once 'aplicacion/models/config.php';
-
 class MarcasModel {
     private $db;
 
     function __construct() {
-        $this->db = new PDO('mysql:host='.DB_HOST . ';dbname='. DB_NAME .';charset=' . DB_Charset .',' . DB_USER . ','. DB_PASS);
+        $this->db = new PDO('mysql:host=localhost;dbname=db_tpe_web2;charset=utf8', 'root', '');
     }
 
     function getMarcas() {

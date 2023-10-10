@@ -9,6 +9,15 @@ if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
 
+
+// listar        ->     productosController->showProductos();
+// agregar       ->     productosController->addProducto();
+// eliminar/:ID  ->     productosController->removeProducto($id); 
+// login         ->     AutenticarController->showAbout();
+// autenticar    ->     AutenticarController->showLogin();
+// logout        ->     AutenticarController->logout();
+
+
 $params = explode('/', $action);
 
 switch ($params[0]) {
