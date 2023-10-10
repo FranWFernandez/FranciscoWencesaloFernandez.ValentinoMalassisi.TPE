@@ -6,7 +6,7 @@ require_once 'aplicacion/helpers/autenticar.helper.php';
 class ProductosController {
     private $model;
     private $view;
-
+    
     public function __construct() {
         AutenticarHelper::verify();
 
