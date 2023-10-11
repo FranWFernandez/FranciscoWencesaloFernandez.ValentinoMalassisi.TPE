@@ -1,33 +1,43 @@
-<?php require 'templates/header.phtml' ?>
+<?php require './templates/header.phtml' ?>
 
-<?php require 'templates/agregar.productos.phtml' ?>
+<?php require_once './templates/agregar.producto.phtml' ?>
 
 <table class="table">
-<?php foreach($productos as $producto): ?>
+
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Producto</th>
             <th scope="col">Talle</th>
             <th scope="col">Precio</th>
-            <th scope="col">Id_cat</th>
-            <th scope="col">Id_marca</th>
+            <th scope="col">Cat</th>
+            <th scope="col">Marca</th>
+            <th scope="col">acciones</th>
         </tr>
     </thead>
     <tbody>
+    <?php foreach($productos as $producto): ?>
         <tr>
             <th scope="row"></th>
-            <td><?= $producto->producto ?></td>
-            <td><?= $producto->talle ?></td>
-            <td><?= $producto->precio ?></td>
-            <td><?= $producto->id_categoria ?></td>
-            <td><?= $producto->id_marca ?></td>
+            <td><?= $producto->Producto ?></td>
+            <td><?= $producto->Talle ?></td>
+            <td><?= $producto->Precio ?></td>
+            <?php
+            /*
+            <td><?= $producto->categoria ?></td>
+            */
+            ?>
+            <td><?= $producto->marca ?></td>
+            <td>
+                <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+            </td>   
         </tr>
+        <?php endforeach ?>
     </tbody>
-    <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
-<?php endforeach ?>
+   
+
 </table>
 
 <p class="mt-3"><small>Mostrando <?=$count?> productos</small></p>
 
-<?php require 'templates/footer.phtml' ?>
+<?php require './templates/footer.phtml' ?>

@@ -44,6 +44,7 @@ switch ($params[0]) {
         $controller->showLogin(); 
         break;
     case 'autenticar':
+       
         $controller = new AutenticarController();
         $controller->autenticar();
         break;

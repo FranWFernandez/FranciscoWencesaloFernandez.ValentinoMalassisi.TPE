@@ -19,18 +19,20 @@ class AutenticarController {
     public function autenticar() {
         $email = $_POST['email'];
         $password = $_POST['password'];
+      
 
         if (empty($email) || empty($password)) {
             $this->view->showLogin('Faltan completar datos');
-            return;
+            die();
         }
 
         $user = $this->model->getByEmail($email);
         if ($user && password_verify($password, $user->PASSWORD)) {
-
+           
             AutenticarHelper::login($user);
             
-            header('Location: ' . BASE_URL);
+           header('Location: ' . BASE_URL . '/listar');
+            
         } else {
             $this->view->showLogin('Usuario inválido');
         }
