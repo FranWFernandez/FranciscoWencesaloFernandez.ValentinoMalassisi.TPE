@@ -10,8 +10,8 @@ class AutenticarHelper {
 
     public static function login($user) {
         AutenticarHelper::init();
-        $_SESSION['USER_ID'] = $user->id;
-        $_SESSION['USER_EMAIL'] = $user->email; 
+        $_SESSION['USER_ID'] = $user->USER_ID;
+        $_SESSION['USER_EMAIL'] = $user->USER_EMAIL; 
     }
 
     public static function logout() {

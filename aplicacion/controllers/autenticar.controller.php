@@ -26,7 +26,8 @@ class AutenticarController {
         }
 
         $user = $this->model->getByEmail($email);
-        if ($user && password_verify($password, $user->password)) {
+        var_dump($user);
+        if ($user && password_verify($password, $user->PASSWORD)) {
 
             AutenticarHelper::login($user);
             
