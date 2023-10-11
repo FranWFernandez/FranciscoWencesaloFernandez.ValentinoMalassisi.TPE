@@ -24,11 +24,11 @@ class ProductosController {
         $producto = $_POST['producto'];
         $precio = $_POST['precio'];
         $talle = $_POST['talle'];
-        $id_categoria = $_POST['id_categoria'];
-        $id_marca = $_POST['id_marca'];
+        $id_categoria = $_POST['categoria'];
+        $id_marca = $_POST['marca'];
 
 
-        if (empty($producto) || empty($talle)) {
+        if (empty($producto) || empty($precio)|| empty($talle)|| empty($id_categoria)|| empty($id_marca)) {
             $this->view->showError("Debe completar todos los campos");
             return;
         }

@@ -1,27 +1,44 @@
+<?php include 'header.phtml' ?>
+
 <form action="agregar" method="POST" class="my-4">
     <div class="row">
 
         <div class="col-3">
             <div class="form-group">
                 <label>Productos</label>
-                <select class="form-control">
-                    <option>Botines</option>
-                    <option>Urbanas</option>
-                    <option>Deportivas</option>
+                <select class="form-control" name="categoria">
+                   <?php foreach ($productos as $producto): ?>
+                    <tr>
+                        <td> 
+                            <option value = "<?php $producto->id_categoria?>"> 
+                            <?php echo $producto->categoria ?> </option> 
+                        </td>
+                    </tr> 
                 </select>
             </div>
         </div>
+        <div class="form-group">
+                <label>Productos</label>
+                <select class="form-control" name="producto">
+                <?php foreach ($productos as $producto): ?>
+                    <tr>
+                        <td> 
+                           <option> <?php echo $producto->producto?> </option> 
+                        </td>
+                    </tr> 
+                </select>
+        </div>
 
-        <div class="col-3">
             <div class="form-group">
                 <label>Marcas</label>
-                <select class="form-control">
-                    <option>Nike</option>
-                    <option>Adidas</option>
-                    <option>Puma</option>
-                    <option>Under Armour</option>
-                    <option>DC</option>
-                    <option>New Balance</option>
+                <select class="form-control" name="marca">
+                <?php foreach ($productos as $producto): ?>
+                    <tr>
+                        <td> 
+                            <option value = "<?php $producto->id_marca?>"> 
+                            <?php echo $producto->marca ?> </option> 
+                        </td>
+                    </tr> 
                 </select>
             </div>
 
@@ -34,7 +51,8 @@
                 <label>Talle</label>
                 <input required name="talle" type="float" class="form-control">
             </div>
-        </div>
     </div>
     <button type="submit" class="btn btn-primary mt-2">Buscar</button>
 </form>
+
+<?php include 'footer.phtml' ?>

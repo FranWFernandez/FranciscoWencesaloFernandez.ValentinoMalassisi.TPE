@@ -1,12 +1,11 @@
 <?php
 
 class HomeView {
-    public function showHome($productos) {
-        count($productos);
-        require './templates/home.phtml';
+    public function showHome($productos, $ProductosCat , $ProductosMar) {
+        require 'templates/home.phtml';
     }
 
     public function showError($error) {
-        require './templates/error.phtml';
+        require 'templates/error.phtml';
     }
 }

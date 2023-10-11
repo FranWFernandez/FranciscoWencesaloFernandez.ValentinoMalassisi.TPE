@@ -8,6 +8,7 @@
             <b><?= $producto->producto ?></b> | (Precio <?= $producto->precio ?>) | (Talle <?= $producto->talle ?>) | (Marca <?= $producto->id_marca ?>)
         </div>
         <div class="actions">
+            <a href="agregar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Agregar</a>
             <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
         </div>
     </li>
