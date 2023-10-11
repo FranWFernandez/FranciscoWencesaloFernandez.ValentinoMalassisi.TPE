@@ -1,9 +1,11 @@
 <?php
 
+require_once './aplicacion/models/model.php';
+
 class MarcasModel extends DB {
 
     function getMarcas() {
-        $query = $this->db->prepare('SELECT * FROM marcas');
+        $query = $this->connect()->prepare('SELECT * FROM marcas');
         $query->execute();
 
         $marcas = $query->fetchAll(PDO::FETCH_OBJ);
@@ -13,15 +15,15 @@ class MarcasModel extends DB {
 
 
     function insertMarca($marca) {
-        $query = $this->db->prepare('INSERT INTO marcas (marca) VALUES(?)');
+        $query = $this->connect()->prepare('INSERT INTO marcas (marca) VALUES(?)');
         $query->execute([$marca]);
 
-        return $this->db->lastInsertId();
+        return $this->connect()->lastInsertId();
     }
 
     
     function deleteMarca($id) {
-        $query = $this->db->prepare('DELETE FROM marcas WHERE id_marca = ?');
+        $query = $this->connect()->prepare('DELETE FROM marcas WHERE id_marca = ?');
         $query->execute([$id]);
     }
 }

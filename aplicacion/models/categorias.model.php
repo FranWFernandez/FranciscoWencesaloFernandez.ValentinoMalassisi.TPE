@@ -1,5 +1,7 @@
 <?php
 
+require_once './aplicacion/models/model.php';
+
 class CategoriasModel extends DB {
     function getCategorias() {
         $query = $this->connect()->prepare('SELECT * FROM categorias');
@@ -12,15 +14,15 @@ class CategoriasModel extends DB {
 
 
     function insertProducto($categoria) {
-        $query = $this->db->prepare('INSERT INTO categorias (categoria) VALUES(?)');
+        $query = $this->connect()->prepare('INSERT INTO categorias (categoria) VALUES(?)');
         $query->execute([$categoria]);
 
-        return $this->db->lastInsertId();
+        return $this->connect()->lastInsertId();
     }
 
     
     function deleteProducto($id) {
-        $query = $this->db->prepare('DELETE FROM categorias WHERE id_categoria = ?');
+        $query = $this->connect()->prepare('DELETE FROM categorias WHERE id_categoria = ?');
         $query->execute([$id]);
     }
 }
