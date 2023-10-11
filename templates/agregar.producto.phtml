@@ -5,9 +5,8 @@
         <?php /*
         <div class="col-3">
             <div class="form-group">
-                <label>Productos</label>
-                <select class="form-control" name="categoria">
-                   <?php foreach ($productos as $producto) ?>
+<           ?php foreach ($productos as $producto) ?>
+            <select class="form-control" name="categoria">
                     <tr>
                         <td> 
                             <option value = "<?php $producto->id_categoria ?>"> 
@@ -28,9 +27,9 @@
         */ ?>
         <div class="form-group">
             <label>Marcas</label>
+            <?php foreach ($productos as $producto) ?>
             <select class="form-control" name="marca">
                 <tr>
-                <?php foreach ($productos as $producto) ?>
                     <td> 
                         <option value = "<?php $producto->marca ?>"> 
                         <?php echo $producto->marca ?> </option> 
