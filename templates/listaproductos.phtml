@@ -1,6 +1,6 @@
 <?php require 'templates/header.phtml' ?>
 
-<?php require 'templates/form_productos.phtml' ?>
+<?php require 'templates/agregar.productos.phtml' ?>
 
 <table class="table">
 <?php foreach($productos as $producto): ?>
@@ -25,7 +25,6 @@
         </tr>
     </tbody>
     <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
-    <a href="agregar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Agregar</a>
 <?php endforeach ?>
 </table>
 
