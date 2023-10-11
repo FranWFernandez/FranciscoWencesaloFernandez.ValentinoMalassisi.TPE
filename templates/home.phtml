@@ -1,27 +1,36 @@
 <?php require './templates/header.phtml' ?>
 
-
-<section id="Tienda" class="container text-center mt-2">
-    <div class="row">
-    
-        <?php foreach ($products as $product) : ?>
-            <div class="col-md-4 mb-4">
-                <div class="card mx-auto" style="width: 18rem;">
-                    <div class="card-body">
-                    <h5 class="card-title"><?= $product->categoria ?></h5>
-                        <h5 class="card-title"><?= $product->id_categoria ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?= $product->producto ?></h6>
-                        <h5 class="card-title"><?= $product->categoria ?></h5>
-                        <p class="card-text"><?= $product->id_marca ?></p>
+<section id="home"> 
+        <div class="container-fluid">
+            <div class="row">
+                <?php foreach($productos as $producto): ?>
+                    <div class="col text-center">
+                        <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text"><?= $producto->producto ?></p>
+                                <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Precio: ARS $ <?= $product->Precio ?></li>
-                        <li class="list-group-item">Talle: <?= $product->Talle > 0 ? 'En Stock' : 'No hay talle' ?></li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <div class="col text-center">
+                        <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text"><?= $producto->producto ?></p>
+                                <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="col text-center">
+                        <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text"><?= $producto->producto ?></p>
+                                <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         <?php endforeach ?>
     </div>
