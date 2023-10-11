@@ -1,6 +1,6 @@
 <?php
 
-require_once './app/models/config.php';
+require_once './aplicacion/models/config.php';
 class DB{
     private $db;
     public function __construct(){

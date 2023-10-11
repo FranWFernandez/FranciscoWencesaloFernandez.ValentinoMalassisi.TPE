@@ -1,15 +1,6 @@
 <?php
-require_once 'aplicacion/models/config.php';
 
 class ProductosModel extends DB {
-    //private $db;
-
-    /*function __construct() {
-        //$this->db = new PDO("mysql:host=". DB_HOST .";dbname=". DB_NAME .";charset=". DB_Charset . DB_USER . DB_PASS);
-        
-        $this->db = new PDO('mysql:host=localhost;dbname=db_tpe_web2;charset=utf8mb4', 'root', '');
-        
-    }*/
 
     function getProductos() {
         $query = $this->connect()->prepare('SELECT productos.*, id_categoria FROM productos 
@@ -38,7 +29,7 @@ class ProductosModel extends DB {
 
     
     function deleteProducto($id) {
-        $query = $this->connect()->prepare('DELETE FROM productos WHERE id = ?');
+        $query = $this->connect()->prepare('DELETE FROM productos WHERE id_producto = ?');
         $query->execute([$id]);
     }
 }
