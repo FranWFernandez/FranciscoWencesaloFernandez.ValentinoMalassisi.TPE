@@ -2,8 +2,7 @@
 
 class HomeView {
     public function showHome($productos) {
-        $count = count($productos);
-
+        count($productos);
         require './templates/home.phtml';
     }
 

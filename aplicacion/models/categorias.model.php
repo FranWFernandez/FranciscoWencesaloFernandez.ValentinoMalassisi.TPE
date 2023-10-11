@@ -1,5 +1,7 @@
 <?php
 
+require_once './aplicacion/models/model.php'; 
+
 class CategoriasModel {
     private $db;
 
