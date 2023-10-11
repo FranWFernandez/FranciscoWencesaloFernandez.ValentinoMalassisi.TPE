@@ -2,17 +2,37 @@
 
 <?php require 'templates/form_productos.phtml' ?>
 
-<ul class="list-group">
+<table class="table">
 <?php foreach($productos as $producto): ?>
-        <div>
-            <b><?= $producto->producto ?></b> | (Precio <?= $producto->precio ?>) | (Talle <?= $producto->talle ?>) | (Marca <?= $producto->id_marca ?>)
-        </div>
-        <div class="actions">
-            <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
-        </div>
-    </li>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Talle</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Id_cat</th>
+            <th scope="col">Id_marca</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"></th>
+            <td><?= $producto->producto ?></td>
+            <td><?= $producto->talle ?></td>
+            <td><?= $producto->precio ?></td>
+            <td><?= $producto->id_categoria ?></td>
+            <td><?= $producto->id_marca ?></td>
+        </tr>
+    </tbody>
+    //<div>
+    //    <b><?= $producto->producto ?></b> | (Precio <?= $producto->precio ?>) | (Talle <?= $producto->talle ?>) | (Marca <?= $producto->id_marca ?>)
+    //</div>
+    //<div class="actions">
+    //    <a href="eliminar/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+    //</div>
+    //</li>
 <?php endforeach ?>
-</ul>
+</table>
 
 <p class="mt-3"><small>Mostrando <?=$count?> productos</small></p>
 
