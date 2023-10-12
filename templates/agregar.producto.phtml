@@ -1,32 +1,26 @@
 
 
 <form action="agregar" method="POST" class="row g-3 border border-bottom border-primary m-5">
-        <?php /*
-        <div class="col-3">
-            <div class="form-group">
-            <?php foreach ($productos as $producto) ?>
-            <select class="form-control" name="categoria">
-                    <tr>
-                        <td> 
-                            <option value = "<?php $producto->id_categoria ?>"> 
-                            <?php echo $producto->categoria ?> </option> 
-                        </td>
-                    </tr> 
-                </select>
-            </div>
-        </div>
-        */ ?>
+<div class="col-md-6">
+        <label class="form-label">Categoria</label>
+        <select class="form-select" name="id_categoria">
+            <?php foreach ($categorias as $categoria) : ?>
+                <option>
+                    <?php echo $categoria->categoria ?>
+                </option>                               
+            <?php endforeach ?>
+        </select>
+    </div>
     <div class="col-md-6">
         <label class="form-label">Producto</label>
         <input required name="producto" type="text" class="form-control">
     </div>
     <div class="col-md-6">
         <label class="form-label">Marcas</label>
-        <select class="form-select" name="marca">
-            <?php foreach ($productos as $producto) : ?>
+        <select class="form-select" name="id_marca">
+            <?php foreach ($marcas as $marca) : ?>
                 <option>
-                    <?php $producto->marca ?>
-                    <?php echo $producto->marca ?>
+                    <?php echo $marca->marca ?>
                 </option>                               
             <?php endforeach ?>
         </select>
@@ -37,7 +31,31 @@
     </div>
     <div class="col-md-6">
         <label class="form-label">Talle</label>
-        <input required name="talle" type="float" class="form-control">
+        <select name="talle" id="talle">
+            <option value="35">35</option>
+            <option value="35.5">35.5</option>
+            <option value="36">36</option>
+            <option value="36.5">36.5</option>
+            <option value="37">37</option>
+            <option value="37.5">37.5</option>
+            <option value="38">35</option>
+            <option value="38.5">38.5</option>
+            <option value="39">39</option>
+            <option value="39.5">39.5</option>
+            <option value="40">40</option>
+            <option value="40.5">40.5</option>
+            <option value="41">41</option>
+            <option value="41.5">41.5</option>
+            <option value="42">42</option>
+            <option value="42.5">42.5</option>
+            <option value="43">43</option>
+            <option value="43.5">43.5</option>
+            <option value="44">44</option>
+            <option value="44.5">44.5</option>
+            <option value="45">45</option>
+            <option value="45.5">45.5</option>
+            <option value="46">46</option>
+        </select>
     </div>
     <div class="col-12">
         <button type="submit" class="btn btn-primary position-absolute end-0">Agregar</button>
