@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2023 a las 04:14:40
+-- Tiempo de generación: 12-10-2023 a las 03:02:31
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -84,7 +84,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `Producto`, `Precio`, `Talle`, `id_categoria`, `id_marca`) VALUES
-(13, 'Botines', 10000, 41, 1, 1);
+(14, 'Zapatillas Superstar XLG', 500, 38, 2, 2),
+(15, 'Zapatillas New Balance 520 Running', 800, 45, 3, 6),
+(16, 'UA Magnetico Select 2.0 FG', 40000, 40, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -97,6 +99,13 @@ CREATE TABLE `usuarios` (
   `USER_EMAIL` varchar(45) NOT NULL,
   `PASSWORD` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`USER_ID`, `USER_EMAIL`, `PASSWORD`) VALUES
+(1, 'webadmin@gmail.com', '$2y$10$Mg0NmpgsinNuJPGvgKr7vOFNJ11OgcoI08xKHy3uXcm/Eh2r.hh/y');
 
 --
 -- Índices para tablas volcadas
@@ -148,13 +157,13 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `USER_ID` int(200) NOT NULL AUTO_INCREMENT;
+  MODIFY `USER_ID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
