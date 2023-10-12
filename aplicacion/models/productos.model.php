@@ -20,7 +20,7 @@ class ProductosModel extends DB {
 
 
     function insertProducto($producto, $precio, $talle, $id_categoria, $id_marca) {
-        $query = $this->connect()->prepare('INSERT INTO productos (producto, precio, talle, id_categoria, id_marca) VALUES(?,?,?,?,?)');
+        $query = $this->connect()->prepare('INSERT INTO productos (Producto, Precio, Talle, id_categoria, id_marca) VALUES(?,?,?,?,?)');
         $query->execute([$producto, $precio, $talle, $id_categoria, $id_marca]);
 
         return $this->connect()->lastInsertId();

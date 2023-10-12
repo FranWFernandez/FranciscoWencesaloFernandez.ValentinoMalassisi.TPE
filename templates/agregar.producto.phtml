@@ -1,11 +1,10 @@
 
 
-<form action="agregar" method="POST" class="my-4">
-    <div class="row">
+<form action="agregar" method="POST" class="row g-3 border border-bottom border-primary m-5">
         <?php /*
         <div class="col-3">
             <div class="form-group">
-<           ?php foreach ($productos as $producto) ?>
+            <?php foreach ($productos as $producto) ?>
             <select class="form-control" name="categoria">
                     <tr>
                         <td> 
@@ -17,38 +16,31 @@
             </div>
         </div>
         */ ?>
-        <?php /*
-        <div class="form-group">
-                <label>Producto</label>
-                <div class="form-group">
-                    <input required name="producto" type="text" class="form-control">
-                </div>
-        </div>
-        */ ?>
-        <div class="form-group">
-            <label>Marcas</label>
-            <?php foreach ($productos as $producto) ?>
-            <select class="form-control" name="marca">
-                <tr>
-                    <td> 
-                        <option value = "<?php $producto->marca ?>"> 
-                        <?php echo $producto->marca ?> </option> 
-                        
-                    </td>
-                </tr> 
-            </select>
-        </div>
-        <?php /*
-        <div class="form-group">
-            <label>Precio</label>
-            <input required name="precio" type="float" class="form-control">
-        </div>
-        <div class="form-group">
-            <label>Talle</label>
-            <input required name="talle" type="float" class="form-control">
-        </div>
-        */ ?>
+    <div class="col-md-6">
+        <label class="form-label">Producto</label>
+        <input required name="producto" type="text" class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
+    <div class="col-md-6">
+        <label class="form-label">Marcas</label>
+        <select class="form-select" name="marca">
+            <?php foreach ($productos as $producto) : ?>
+                <option>
+                    <?php $producto->marca ?>
+                    <?php echo $producto->marca ?>
+                </option>                               
+            <?php endforeach ?>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Precio</label>
+        <input required name="precio" type="float" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Talle</label>
+        <input required name="talle" type="float" class="form-control">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary position-absolute end-0">Agregar</button>
+    </div>
 </form>
 
