@@ -1,7 +1,7 @@
 
 
 <form action="agregar" method="POST" class="row g-3 border border-bottom border-primary m-5">
-<div class="col-md-6">
+    <div class="col-md-6">
         <label class="form-label">Categoria</label>
         <select class="form-select" name="id_categoria">
             <?php foreach ($categorias as $categoria) : ?>
@@ -20,7 +20,7 @@
         <select class="form-select" name="id_marca">
             <?php foreach ($marcas as $marca) : ?>
                 <option>
-                    <?php echo $marca->marca ?>
+                    <?php echo $marca->id_marca ?>
                 </option>                               
             <?php endforeach ?>
         </select>
