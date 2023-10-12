@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2023 a las 03:02:31
+-- Tiempo de generación: 13-10-2023 a las 00:58:01
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -86,7 +86,8 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`id_producto`, `Producto`, `Precio`, `Talle`, `id_categoria`, `id_marca`) VALUES
 (14, 'Zapatillas Superstar XLG', 500, 38, 2, 2),
 (15, 'Zapatillas New Balance 520 Running', 800, 45, 3, 6),
-(16, 'UA Magnetico Select 2.0 FG', 40000, 40, 1, 4);
+(17, 'adidas tiempo', 7777, 36, 1, 2),
+(18, 'dc old school', 6000, 43, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,7 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

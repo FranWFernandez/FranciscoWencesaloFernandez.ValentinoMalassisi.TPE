@@ -1,0 +1,28 @@
+//require_once 'aplicacion/models/categorias.model.php';
+//require_once 'aplicacion/models/marcas.model.php';
+
+
+//private $modelMarca;
+// private $modelCategoria;
+
+//private $MarcasView;
+
+
+//$this->modelMarca = new MarcasModel();
+//$this->modelCategoria = new CategoriasModel();
+
+//$this->MarcasView = new MarcasView();
+
+
+
+/*
+    public function showMarcas() {
+        $marcas = $this->modelMarca->getMarcas();
+        $this->MarcasView->showMarcas($marcas);
+    }
+    
+    public function showCategorias() {
+        $categorias = $this->modelCategoria->getCategorias();
+        $this->view->showCategorias($categorias);
+}*/
+

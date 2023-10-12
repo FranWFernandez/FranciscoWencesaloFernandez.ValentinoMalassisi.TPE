@@ -31,6 +31,10 @@ switch ($params[0]) {
         $controller = new productosController();
         $controller->showProductos();
         break;
+    // case 'listar1':
+    //     $controller = new productosController();
+    //     $controller->showMarcas();
+    //     break;
     case 'agregar':
         $controller = new productosController();
         $controller->addProducto();

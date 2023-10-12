@@ -1,7 +1,7 @@
 <?php
 
 class HomeView {
-    public function showHome($productos, $ProductosCat , $ProductosMar) {
+    public function showHome($productos) {
         require 'templates/home.phtml';
     }
 
