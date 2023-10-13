@@ -17,33 +17,30 @@ class ProductosController {
     }
 
     public function showProductos() {
-        $Productos = $this->model->getProductos();
         $CategoriasModel = new CategoriasModel();
         $MarcasModel = new MarcasModel();
         $categorias = $CategoriasModel->getCategoriasNames();
         $marcas = $MarcasModel->getMarcasNames();
-        $this->view->showProductos($Productos,$categorias,$marcas);
+        $productos = $this->model->getProductos();
+        $this->view->showProductos($productos,$categorias,$marcas);
     }
 
     
     public function addProducto() {
-
-        $producto = $_POST['producto'];
-        $precio = $_POST['precio'];
-        $talle = $_POST['talle'];
-        $id_categoria = $_POST['id_categoria'];
-        $id_marca = $_POST['id_marca'];
-
-        if (empty($producto) || empty($precio)|| empty($talle)|| empty($categoria)|| empty($marca)) {
+        if (empty($_POST['producto']) || empty($_POST['precio'])|| empty($_POST['talle'])|| empty($_POST['id_categoria'])|| empty($_POST['id_marca'])) {
             $this->view->showError("Debe completar todos los campos");
-            return;
-        }
-
-        $id = $this->model->insertProducto($producto, $precio, $talle, $id_categoria, $id_marca);
-        if ($id) {
-            header('Location: ' . BASE_URL . '/listar');
-        } else {
-            $this->view->showError("Error al insertar el producto");
+        }else {
+            $producto = $_POST['producto'];
+            $precio = $_POST['precio'];
+            $talle = $_POST['talle'];
+            $id_categorias = $_POST['id_categoria'];
+            $id_marcas = $_POST['id_marca'];
+            $id = $this->model->insertProducto($producto, $precio, $talle, $id_categorias, $id_marcas);
+            if ($id) {
+                header('Location: ' . BASE_URL . '/listar');
+            } else {
+                $this->view->showError("Error al insertar el producto");
+            }
         }
     }
     function removeProducto($id) {

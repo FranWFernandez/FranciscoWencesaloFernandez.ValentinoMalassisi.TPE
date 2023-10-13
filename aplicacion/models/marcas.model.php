@@ -5,7 +5,7 @@ require_once './aplicacion/models/model.php';
 class MarcasModel extends DB {
 
     function getMarcasNames() {
-        $query = $this->connect()->prepare('SELECT marca FROM marcas');
+        $query = $this->connect()->prepare('SELECT * FROM marcas');
         $query->execute();
 
         $marcas = $query->fetchAll(PDO::FETCH_OBJ);

@@ -4,7 +4,7 @@ require_once './aplicacion/models/model.php';
 
 class CategoriasModel extends DB {
     function getCategoriasNames() {
-        $query = $this->connect()->prepare('SELECT categoria FROM categorias');
+        $query = $this->connect()->prepare('SELECT * FROM categorias');
         $query->execute();
 
         $categorias = $query->fetchAll(PDO::FETCH_OBJ);
