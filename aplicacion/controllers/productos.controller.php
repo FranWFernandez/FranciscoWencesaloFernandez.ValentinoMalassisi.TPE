@@ -1,6 +1,8 @@
 <?php
 
 require_once 'aplicacion/models/productos.model.php';
+require_once 'aplicacion/models/marcas.model.php';
+require_once 'aplicacion/models/categorias.model.php';
 require_once 'aplicacion/views/productos.view.php';
 require_once 'aplicacion/helpers/autenticar.helper.php';
 
@@ -16,7 +18,11 @@ class ProductosController {
 
     public function showProductos() {
         $Productos = $this->model->getProductos();
-        $this->view->showProductos($Productos);
+        $CategoriasModel = new CategoriasModel();
+        $MarcasModel = new MarcasModel();
+        $categorias = $CategoriasModel->getCategoriasNames();
+        $marcas = $MarcasModel->getMarcasNames();
+        $this->view->showProductos($Productos,$categorias,$marcas);
     }
 
     

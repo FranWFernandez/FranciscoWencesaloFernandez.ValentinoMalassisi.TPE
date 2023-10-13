@@ -3,8 +3,8 @@
 require_once './aplicacion/models/model.php';
 
 class CategoriasModel extends DB {
-    function getCategorias() {
-        $query = $this->connect()->prepare('SELECT * FROM categorias');
+    function getCategoriasNames() {
+        $query = $this->connect()->prepare('SELECT categoria FROM categorias');
         $query->execute();
 
         $categorias = $query->fetchAll(PDO::FETCH_OBJ);
@@ -13,16 +13,16 @@ class CategoriasModel extends DB {
     }
 
 
-    function insertProducto($categoria) {
-        $query = $this->connect()->prepare('INSERT INTO categorias (categoria) VALUES(?)');
-        $query->execute([$categoria]);
+    // function insertProducto($categoria) {
+    //     $query = $this->connect()->prepare('INSERT INTO categorias (categoria) VALUES(?)');
+    //     $query->execute([$categoria]);
 
-        return $this->connect()->lastInsertId();
-    }
+    //     return $this->connect()->lastInsertId();
+    // }
 
     
-    function deleteProducto($id) {
-        $query = $this->connect()->prepare('DELETE FROM categorias WHERE id_categoria = ?');
-        $query->execute([$id]);
-    }
+    // function deleteProducto($id) {
+    //     $query = $this->connect()->prepare('DELETE FROM categorias WHERE id_categoria = ?');
+    //     $query->execute([$id]);
+    // }
 }

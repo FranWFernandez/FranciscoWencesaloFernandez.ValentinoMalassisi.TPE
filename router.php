@@ -11,8 +11,9 @@ if (!empty( $_GET['action'])) {
 }
 
 
-//mostrar        ->     homeController->showHome();
+// mostrar       ->     homeController->showHome();
 // listar        ->     productosController->showProductos();
+//
 // agregar       ->     productosController->addProducto();
 // eliminar/:ID  ->     productosController->removeProducto($id); 
 // login         ->     AutenticarController->showLogin();
@@ -31,7 +32,7 @@ switch ($params[0]) {
         $controller = new productosController();
         $controller->showProductos();
         break;
-    // case 'listar1':
+    // case 'marcas':
     //     $controller = new productosController();
     //     $controller->showMarcas();
     //     break;

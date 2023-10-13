@@ -1,8 +1,9 @@
 <?php
 
 class ProductosView {
-    public function showProductos($productos) {
+    public function showProductos($productos,$categorias,$marcas) {
         $count = count($productos);
+        
 
         require 'templates/listaproductos.phtml';
     }

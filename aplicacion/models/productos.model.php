@@ -7,8 +7,8 @@ class ProductosModel extends DB {
     function getProductos() {
         $query = $this->connect()->prepare('SELECT productos.*, marcas.marca FROM productos 
                                     INNER JOIN marcas ON productos.id_marca = marcas.id_marca');
-        //$query = $this->connect()->prepare('SELECT productos.*, categorias.categoria FROM productos 
-                                    //INNER JOIN categorias ON productos.id_categoria = categorias.id_categoria');
+        $query = $this->connect()->prepare('SELECT productos.*, categorias.categoria FROM productos 
+                                    INNER JOIN categorias ON productos.id_categoria = categorias.id_categoria');
         
 
         $query->execute();
