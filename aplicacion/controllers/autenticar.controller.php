@@ -31,7 +31,7 @@ class AutenticarController {
            
             AutenticarHelper::login($user);
             
-           header('Location: ' . BASE_URL . '/listar');
+           header('Location: ' . BASE_URL . '/editarproductos');
             
         } else {
             $this->view->showLogin('Usuario inválido');

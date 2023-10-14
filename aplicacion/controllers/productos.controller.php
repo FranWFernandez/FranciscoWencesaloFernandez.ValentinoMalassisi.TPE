@@ -37,7 +37,7 @@ class ProductosController {
             $id_marcas = $_POST['id_marca'];
             $id = $this->model->insertProducto($producto, $precio, $talle, $id_categorias, $id_marcas);
             if ($id) {
-                header('Location: ' . BASE_URL . '/listar');
+                header('Location: ' . BASE_URL . '/editarproductos');
             } else {
                 $this->view->showError("Error al insertar el producto");
             }
@@ -57,7 +57,7 @@ class ProductosController {
             $this->model->UpdateProducto($id,$producto, $precio, $talle, $id_categorias, $id_marcas);
             
             if ($id) {
-                header('Location: ' . BASE_URL . '/listar');
+                header('Location: ' . BASE_URL . '/editarproductos');
             } else {
                 $this->view->showError("Error al editar el producto");
             }
@@ -67,6 +67,6 @@ class ProductosController {
 
     function removeProducto($id) {
         $this->model->deleteProducto($id);
-        header('Location: ' . BASE_URL . '/listar');
+        header('Location: ' . BASE_URL . '/editarproductos');
     }
 }

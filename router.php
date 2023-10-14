@@ -28,13 +28,17 @@ switch ($params[0]) {
         $controller = new homeController();
         $controller->showHome();
         break;
-    case 'listar':
+    case 'editarproductos':
         $controller = new productosController();
         $controller->showProductos();
         break;
     case 'categorias':
         $controller = new CategoriasController();
         $controller->showCategorias();
+        break;
+    case 'editarcategorias':
+        $controller = 
+        $controller-> 
         break;
     case 'agregar':
         $controller = new productosController();
