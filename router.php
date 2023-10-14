@@ -32,10 +32,10 @@ switch ($params[0]) {
         $controller = new productosController();
         $controller->showProductos();
         break;
-    // case 'marcas':
-    //     $controller = new productosController();
-    //     $controller->showMarcas();
-    //     break;
+    case 'categorias':
+        $controller = new CategoriasController();
+        $controller->showCategorias();
+        break;
     case 'agregar':
         $controller = new productosController();
         $controller->addProducto();
@@ -53,7 +53,6 @@ switch ($params[0]) {
         $controller->showLogin(); 
         break;
     case 'autenticar':
-       
         $controller = new AutenticarController();
         $controller->autenticar();
         break;

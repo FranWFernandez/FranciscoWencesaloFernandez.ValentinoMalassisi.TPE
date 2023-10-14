@@ -1,0 +1,28 @@
+<?php require './templates/header.phtml' ?>
+
+<section id="ShowByCategoria"> 
+    <?php require './templates/carrousel.phtml' ?>
+    <div class="container-fluid">
+        <div class="row">
+            <?php foreach($productos as $producto): ?>
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <?php if ($producto->categoria = $categoria->categoria) ?>
+                            <p class="card-text"><?= $producto->Producto ?></p>
+                            <p class="card-text"><?= $producto->Talle ?></p>
+                            <p class="card-text">$<?= $producto->Precio ?></p>
+                            <p class="card-text"><?= $producto->marca ?></p>
+                            <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+</section>
+
+
+
+<?php require './templates/footer.phtml' ?>
