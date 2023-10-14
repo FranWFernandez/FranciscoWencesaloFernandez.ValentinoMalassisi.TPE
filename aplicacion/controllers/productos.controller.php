@@ -43,6 +43,28 @@ class ProductosController {
             }
         }
     }
+    public function updateProducto(){
+        if (empty($_POST['id_productoEditar']) ||empty($_POST['productoEditar']) || empty($_POST['precioEditar'])|| empty($_POST['talleEditar'])|| empty($_POST['id_categoriaEditar'])|| empty($_POST['id_marcaEditar'])) {
+            $this->view->showError("ERROR EN EDITAR");
+        }else {
+            $id = $_POST ['id_productoEditar'];
+            $producto = $_POST['productoEditar'];
+            $precio = $_POST['precioEditar'];
+            $talle = $_POST['talleEditar'];
+            $id_categorias = $_POST['id_categoriaEditar'];
+            $id_marcas = $_POST['id_marcaEditar'];
+            
+            $this->model->UpdateProducto($id,$producto, $precio, $talle, $id_categorias, $id_marcas);
+            
+            if ($id) {
+                header('Location: ' . BASE_URL . '/listar');
+            } else {
+                $this->view->showError("Error al editar el producto");
+            }
+        }
+
+    }
+
     function removeProducto($id) {
         $this->model->deleteProducto($id);
         header('Location: ' . BASE_URL . '/listar');

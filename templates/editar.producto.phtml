@@ -1,0 +1,66 @@
+<form action="editar" method="POST" class="row g-3 border border-bottom border-primary m-5">
+<div class="col-md-6">
+        <label class="form-label">Id a editar</label>
+        <input name="id_productoEditar" type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Categoria Nueva</label>
+        <select class="form-select" name="id_categoriaEditar">
+            <?php foreach ($categorias as $categoria) : ?>
+                <option value="<?= $categoria->id_categoria ?>">
+                    <?php echo $categoria->categoria ?>
+                </option>                               
+            <?php endforeach ?>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Producto Nuevo</label>
+        <input name="productoEditar" type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Marca Nueva</label>
+        <select class="form-select" name="id_marcaEditar">
+            <?php foreach ($marcas as $marca) : ?>
+                <option value="<?= $marca->id_marca ?>">
+                    <?php echo $marca->marca ?>
+                </option>                               
+            <?php endforeach ?>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Precio Nuevo</label>
+        <input name="precioEditar" type="float" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Talle Nuevo</label>
+        <select name="talleEditar" id="talleEditar">
+            <option value="35">35</option>
+            <option value="35.5">35.5</option>
+            <option value="36">36</option>
+            <option value="36.5">36.5</option>
+            <option value="37">37</option>
+            <option value="37.5">37.5</option>
+            <option value="38">35</option>
+            <option value="38.5">38.5</option>
+            <option value="39">39</option>
+            <option value="39.5">39.5</option>
+            <option value="40">40</option>
+            <option value="40.5">40.5</option>
+            <option value="41">41</option>
+            <option value="41.5">41.5</option>
+            <option value="42">42</option>
+            <option value="42.5">42.5</option>
+            <option value="43">43</option>
+            <option value="43.5">43.5</option>
+            <option value="44">44</option>
+            <option value="44.5">44.5</option>
+            <option value="45">45</option>
+            <option value="45.5">45.5</option>
+            <option value="46">46</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+    <button type="submit" class="btn btn-primary position-absolute end-0">Editar</button>
+    </div>
+</form>
+

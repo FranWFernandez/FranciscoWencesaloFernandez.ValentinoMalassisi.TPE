@@ -40,6 +40,10 @@ switch ($params[0]) {
         $controller = new productosController();
         $controller->addProducto();
         break;
+    case 'editar':
+        $controller = new productosController();
+        $controller->updateProducto();
+        break;
     case 'eliminar':
         $controller = new productosController();
         $controller->removeProducto($params[1]);

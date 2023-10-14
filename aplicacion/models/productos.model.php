@@ -26,6 +26,10 @@ class ProductosModel extends DB {
         $query->execute([$producto, $precio, $talle, $id_categorias, $id_marcas]);
         return $this->connect()->lastInsertId();
     }
+    function updateProducto($id,$producto, $precio, $talle, $id_categorias, $id_marcas) {
+        $query = $this->connect()->prepare('UPDATE productos SET Producto=?, Precio=?, Talle=?, id_categoria=?, id_marca=? WHERE id_producto=?');
+        $query->execute([$producto, $precio, $talle, $id_categorias, $id_marcas, $id]);
+    }
 
     
     function deleteProducto($id) {
