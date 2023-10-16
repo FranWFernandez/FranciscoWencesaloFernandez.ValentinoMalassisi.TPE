@@ -1,20 +1,21 @@
 <?php
 
 require_once 'aplicacion/models/categorias.model.php';
+require_once 'aplicacion/views/categorias.view.php';
 class CategoriasController {
-    private $modelCategoria;
     private $viewCategoria;
 
 
     public function __construct() {
-        $this->modelCategoria = new CategoriasModel();
         $this->viewCategoria = new CategoriasView();
     }
 
 
     public function showCategorias() {
-        $categorias = $this->modelCategoria->getCategoriasNames();
+        $CategoriasModel = new CategoriasModel();
+        $categorias = $CategoriasModel->getCategoriasNames();
         $this->viewCategoria->showCategorias($categorias);
+
     }
 }
 
