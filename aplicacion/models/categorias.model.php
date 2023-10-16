@@ -12,17 +12,19 @@ class CategoriasModel extends DB {
         return $categorias;
     }
 
-
-    function insertProducto($categoria) {
-         $query = $this->connect()->prepare('INSERT INTO categorias (categoria) VALUES(?)');
-         $query->execute([$categoria]);
-
-         return $this->connect()->lastInsertId();
-     }
+    function insertCategoria($categoria) {
+        $query = $this->connect()->prepare('INSERT INTO `categorias` (`categoria`) VALUES(?)');
+        $query->execute([$categoria]);
+        return $this->connect()->lastInsertId();
+    }
+    function updateCategoria($id_categoria,$categoria) {
+        $query = $this->connect()->prepare('UPDATE categorias SET categoria=? WHERE id_categoria=?');
+        $query->execute([$categoria, $id_categoria]);
+    }
 
     
-     function deleteProducto($id) {
-         $query = $this->connect()->prepare('DELETE FROM categorias WHERE id_categoria = ?');
-         $query->execute([$id]);
-     }
+    function deleteCategoria($id) {
+        $query = $this->connect()->prepare('DELETE FROM categorias WHERE id_categoria = ?');
+        $query->execute([$id]);
+    }
 }

@@ -1,0 +1,31 @@
+<?php require './templates/header.phtml' ?>
+
+<?php require_once './templates/agregar.categoria.phtml' ?>
+<?php require_once './templates/editar.categoria.phtml' ?>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($categorias as $categoria): ?>
+            <tr>
+                <th scope="row"><?= $categoria->id_categoria ?></th>
+                <td><?= $categoria->categoria ?></td>
+                <td>
+                    <a href="eliminarCategoria/<?= $categoria->id_categoria ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+                </td>   
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+   
+
+</table>
+
+<p class="mt-3"><small>Mostrando <?=$count?> categorias</small></p>
+
+<?php require './templates/footer.phtml' ?>

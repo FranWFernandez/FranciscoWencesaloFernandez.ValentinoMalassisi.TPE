@@ -1,5 +1,6 @@
 <?php
 require_once 'aplicacion/controllers/productos.controller.php';
+require_once 'aplicacion/controllers/categorias.controller.php';
 require_once 'aplicacion/controllers/autenticar.controller.php';
 require_once 'aplicacion/controllers/home.controller.php';
 
@@ -28,29 +29,41 @@ switch ($params[0]) {
         $controller = new homeController();
         $controller->showHome();
         break;
+    case 'categorias':
+        $controller = new CategoriasController();            
+        $controller->showMenuCategoria();
+        break;
     case 'editarproductos':
         $controller = new productosController();
         $controller->showProductos();
         break;
-    case 'categorias':
-        $controller = new CategoriasController();
-        $controller->showCategorias();
-        break;
     case 'editarcategorias':
-        $controller = 
-        $controller-> 
+        $controller = new CategoriasController();
+        $controller-> showCategorias();
         break;
-    case 'agregar':
+    case 'agregarProducto':
         $controller = new productosController();
         $controller->addProducto();
         break;
-    case 'editar':
+    case 'editarProducto':
         $controller = new productosController();
         $controller->updateProducto();
         break;
-    case 'eliminar':
+    case 'eliminarProducto':
         $controller = new productosController();
         $controller->removeProducto($params[1]);
+        break;
+    case 'agregarCategoria':
+        $controller = new CategoriasController();
+        $controller->addCategoria();
+        break;
+    case 'editarCategoria':
+        $controller = new CategoriasController();
+        $controller->updateCategoria();
+        break;
+    case 'eliminarCategoria':
+        $controller = new CategoriasController();
+        $controller->removeCategoria($params[1]);
         break;
     case 'login':
         $controller = new AutenticarController();
