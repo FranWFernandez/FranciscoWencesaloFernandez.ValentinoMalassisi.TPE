@@ -31,7 +31,7 @@ switch ($params[0]) {
         break;
     case 'categorias':
         $controller = new CategoriasController();            
-        $controller->showMenuCategoria();
+        $controller->showMenuCategorias();
         break;
     case 'editarproductos':
         $controller = new productosController();
