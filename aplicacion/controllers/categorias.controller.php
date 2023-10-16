@@ -20,9 +20,9 @@ class CategoriasController {
         $this->viewCategoria->showCategorias($categorias);
 
     }
-    public function showMenuCategorias() {
+    public function showByCategorias() {
         $categorias = $this->modelCategoria->getCategoriasNames();
-        $this->viewCategoria->showMenuCategorias($categorias);
+        $this->viewCategoria->showByCategorias($categorias);
 
     }
     public function addCategoria() {

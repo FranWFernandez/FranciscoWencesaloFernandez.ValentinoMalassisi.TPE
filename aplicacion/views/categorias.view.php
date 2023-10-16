@@ -7,7 +7,7 @@ class CategoriaSView {
         require 'templates/listacategorias.phtml';
     }
 
-    public function showMenuCategorias($categorias) {
+    public function showByCategorias($categorias) {
         $count = count($categorias);
 
         require 'templates/ShowByCategoria.phtml';

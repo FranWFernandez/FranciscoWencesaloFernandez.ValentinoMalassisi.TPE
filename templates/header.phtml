@@ -26,16 +26,14 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                <form  method="POST">
                                     <div class="col-md-6"> 
-                                        <select class="form-select" name="categoriaFiltro">
+                                        <select name="showByCategorias">
                                             <?php foreach ($categorias as $categoria) : ?>
                                                 <option value="<?= $categoria->id_categoria ?>">
                                                     <?php echo $categoria->categoria ?>
                                                 </option>                           
                                             <?php endforeach ?>
                                         </select>   
-                                </form>
                                 </ul> 
                             </li>
                         <?php if (!isset($_SESSION['USER_ID'])) : ?>

@@ -29,9 +29,9 @@ switch ($params[0]) {
         $controller = new homeController();
         $controller->showHome();
         break;
-    case 'categorias':
+    case 'showByCategorias':
         $controller = new CategoriasController();            
-        $controller->showMenuCategorias();
+        $controller->showByCategorias();
         break;
     case 'editarproductos':
         $controller = new productosController();
