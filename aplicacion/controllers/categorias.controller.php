@@ -23,7 +23,6 @@ class CategoriasController {
     public function showByCategorias() {
         $categorias = $this->modelCategoria->getCategoriasNames();
         $this->viewCategoria->showByCategorias($categorias);
-
     }
     public function addCategoria() {
         if ( empty($_POST['categoriaAdd'])) {

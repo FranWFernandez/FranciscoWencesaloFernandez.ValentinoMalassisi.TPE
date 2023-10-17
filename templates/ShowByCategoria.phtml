@@ -4,16 +4,13 @@
     <?php require './templates/carrousel.phtml' ?>
     <div class="container-fluid">
         <div class="row">
-            <?php foreach($productos as $producto): ?>
+            <?php foreach($categorias as $categoria): ?>
                 <div class="col-md-4 mb-4 text-center">
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
-                        <?php if ($producto->categoria = 'categoriaFiltro') ?>
-                            <p class="card-text"><?= $producto->Producto ?></p>
-                            <p class="card-text"><?= $producto->Talle ?></p>
-                            <p class="card-text">$<?= $producto->Precio ?></p>
-                            <p class="card-text"><?= $producto->marca ?></p>
+                            <?php if ($categoria->categoria = 'categoriaFiltro') ?>
+                            <p class="card-text"><?= $categoria->Producto ?> (<?= $categoria-> categoria?>)</p>
                             <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
                         </div>
                     </div>

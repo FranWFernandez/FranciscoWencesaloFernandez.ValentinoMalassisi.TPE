@@ -15,11 +15,11 @@ class ProductosModel extends DB {
         return $productos;
     }
     public function getItem ($id){
-        $query= $this->connect()->prepare('SELECT * productos where id=?');
+        $query= $this->connect()->prepare('SELECT * FROM productos WHERE id_producto = ?');
         $query->execute([$id]);
-        $productos = $query->fetch(PDO::FETCH_OBJ);
-        return $productos;
-    }
+        $Item = $query->fetch(PDO::FETCH_OBJ);
+        return $Item;
+     }
 
     function insertProducto($producto, $precio, $talle, $id_categorias, $id_marcas) {
         $query = $this->connect()->prepare('INSERT INTO `productos` (`Producto`, `Precio`, `Talle`, `id_categoria`, `id_marca`) VALUES(?,?,?,?,?)');
