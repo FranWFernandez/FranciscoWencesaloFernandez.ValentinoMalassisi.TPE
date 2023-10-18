@@ -16,5 +16,4 @@ class ProductosView {
 
         require 'templates/ShowByCategoria.phtml';
     }
-    
 }
