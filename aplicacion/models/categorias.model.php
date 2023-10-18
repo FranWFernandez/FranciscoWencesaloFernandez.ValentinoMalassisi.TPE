@@ -11,6 +11,7 @@ class CategoriasModel extends DB {
 
         return $categorias;
     }
+    
 
     function insertCategoria($categoria) {
         $query = $this->connect()->prepare('INSERT INTO `categorias` (`categoria`) VALUES(?)');

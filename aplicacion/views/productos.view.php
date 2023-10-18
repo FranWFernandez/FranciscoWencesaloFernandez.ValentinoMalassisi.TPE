@@ -11,4 +11,10 @@ class ProductosView {
     public function showError($error) {
         require 'templates/error.phtml';
     }
+
+    public function showByCategorias($itemCat) {
+
+        require 'templates/ShowByCategoria.phtml';
+    }
+    
 }

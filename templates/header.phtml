@@ -27,7 +27,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu dropdown-menu-dark"> 
                                 <?php foreach ($categorias as $categoria) : ?>
-                                    <li><a class="dropdown-item" href="showByCategorias/<?= $categoria->id_categoria ?>"> <?= $categoria->categoria ?></a></li>
+                                    <li><a name="filterByCategoria" class="dropdown-item" href="showByCategoria/<?= $categoria->id_categoria ?>"> <?= $categoria->categoria ?></a></li>
                                 <?php endforeach ?>  
                             </ul> 
                         </li>

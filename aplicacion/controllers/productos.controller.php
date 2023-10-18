@@ -65,6 +65,11 @@ class ProductosController {
 
     }
 
+    public function showByCategorias($id_categoria) {
+        $producto = $this->model->getByCategoria($id_categoria);
+        $this->view->showByCategorias($producto);
+    }
+
     function removeProducto($id) {
         $this->model->deleteProducto($id);
         header('Location: ' . BASE_URL . '/editarproductos');

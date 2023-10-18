@@ -58,10 +58,10 @@ switch ($params[0]) {
         $controller = new CategoriasController();
         $controller-> showCategorias();
         break;
-    // case 'showByCategorias':
-    //     $controller = new CategoriasController();            
-    //     $controller->showByCategorias();
-    //     break;
+     case 'showByCategoria':
+         $controller = new ProductosController();            
+         $controller->showByCategorias($params[1]);
+         break;
     case 'agregarCategoria':
         $controller = new CategoriasController();
         $controller->addCategoria();
