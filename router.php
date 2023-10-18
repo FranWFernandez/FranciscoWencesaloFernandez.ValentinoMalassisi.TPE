@@ -12,14 +12,19 @@ if (!empty( $_GET['action'])) {
 }
 
 
-// mostrar       ->     homeController->showHome();
-// listar        ->     productosController->showProductos();
-//
-// agregar       ->     productosController->addProducto();
-// eliminar/:ID  ->     productosController->removeProducto($id); 
-// login         ->     AutenticarController->showLogin();
-// autenticar    ->     AutenticarController->autenticar();
-// logout        ->     AutenticarController->logout();
+// home                    ->     homeController            ->      showHome();
+// mostrarproductos        ->     productosController       ->      showProductos();
+// agregarproducto         ->     productosController       ->      addProducto();
+// editarproducto          ->     productosController       ->      updateProducto();     
+// eliminarproducto        ->     productosController       ->      removeProducto($id); 
+// mostrarcategorias       ->     CategoriasController      ->      showCategorias();
+// showByCategorias        ->     CategoriasController      ->      showByCategorias();
+// agregarCategoria        ->     CategoriasController      ->      addCategoria();
+// editarCategoria         ->     CategoriasController      ->      updateCategoria();
+// eliminarCategoria       ->     CategoriasController      ->      removeCategoria($id);
+// login                   ->     AutenticarController      ->      showLogin();
+// autenticar              ->     AutenticarController      ->      autenticar();
+// logout                  ->     AutenticarController      ->      logout();
 
 
 $params = explode('/', $action);
@@ -29,23 +34,19 @@ switch ($params[0]) {
         $controller = new homeController();
         $controller->showHome();
         break;
-    case 'showByCategorias':
-        $controller = new CategoriasController();            
-        $controller->showByCategorias();
+    case 'showItem':
+        $controller = new homeController();
+        $controller->showItem($params[1]);
         break;
     case 'editarproductos':
         $controller = new productosController();
         $controller->showProductos();
         break;
-    case 'editarcategorias':
-        $controller = new CategoriasController();
-        $controller-> showCategorias();
-        break;
-    case 'agregarProducto':
+    case 'agregarproducto':
         $controller = new productosController();
         $controller->addProducto();
         break;
-    case 'editarProducto':
+    case 'editarproducto':
         $controller = new productosController();
         $controller->updateProducto();
         break;
@@ -53,6 +54,14 @@ switch ($params[0]) {
         $controller = new productosController();
         $controller->removeProducto($params[1]);
         break;
+    case 'editarcategorias':
+        $controller = new CategoriasController();
+        $controller-> showCategorias();
+        break;
+     case 'showByCategoria':
+         $controller = new ProductosController();            
+         $controller->showByCategorias($params[1]);
+         break;
     case 'agregarCategoria':
         $controller = new CategoriasController();
         $controller->addCategoria();

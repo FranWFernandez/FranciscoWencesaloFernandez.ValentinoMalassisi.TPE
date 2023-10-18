@@ -1,0 +1,21 @@
+<?php require 'header.phtml' ?>
+
+<div class="row product-container">
+    <div class="col-md-5 order-md-1">
+        <img class="card-image-top" src="" alt="cs">
+    </div>
+    <div class="col-md-7 order-md-2">
+        <h2 class="product-title"><?= $Item->Producto ?></h2>
+        <p class="lead product-price"><?= $Item->Precio ?></p>
+        <div class="product-details">
+            <h4>Marca:</h4>
+            <p><?= $Item->id_marca ?></p>
+            <h4>Talle:</h4>
+            <p><?= $Item->Talle ?></p>
+            <h4>Categoria:</h4>
+            <p><?= $Item->id_categoria ?></p>
+        </div>
+    </div>
+</div>
+
+<?php require 'footer.phtml'; ?>

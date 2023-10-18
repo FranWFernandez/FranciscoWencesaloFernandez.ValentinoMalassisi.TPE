@@ -20,11 +20,7 @@ class CategoriasController {
         $this->viewCategoria->showCategorias($categorias);
 
     }
-    public function showByCategorias() {
-        $categorias = $this->modelCategoria->getCategoriasNames();
-        $this->viewCategoria->showByCategorias($categorias);
 
-    }
     public function addCategoria() {
         if ( empty($_POST['categoriaAdd'])) {
             $this->viewCategoria->showError("Debe completar todos los campos");

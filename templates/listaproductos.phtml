@@ -4,7 +4,6 @@
 <?php require_once './templates/editar.producto.phtml' ?>
 
 <table class="table">
-
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -26,7 +25,7 @@
                 <td><?= $producto->categoria ?></td>
                 <td><?= $producto->marca ?></td>
                 <td>
-                    <a href="eliminarProducto/<?= $producto->id_producto ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+                    <a href="eliminarProducto/<?= $producto->id_producto ?>" type="button" class="btn  btn-outline-danger me-md-2 p-2">Eliminar</a>
                 </td>   
             </tr>
         <?php endforeach ?>

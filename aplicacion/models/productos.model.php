@@ -15,10 +15,19 @@ class ProductosModel extends DB {
         return $productos;
     }
     public function getItem ($id){
-        $query= $this->connect()->prepare('SELECT * productos where id=?');
+        $query= $this->connect()->prepare('SELECT * FROM productos WHERE id_producto = ?');
         $query->execute([$id]);
-        $productos = $query->fetch(PDO::FETCH_OBJ);
-        return $productos;
+        $Item = $query->fetch(PDO::FETCH_OBJ);
+        return $Item;
+     }
+
+     function getByCategoria($id_categoria) {
+        $query = $this->connect()->prepare('SELECT * FROM productos where id_categoria=?');
+        $query->execute([$id_categoria]);
+
+        $itemCat = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $itemCat;
     }
 
     function insertProducto($producto, $precio, $talle, $id_categorias, $id_marcas) {
