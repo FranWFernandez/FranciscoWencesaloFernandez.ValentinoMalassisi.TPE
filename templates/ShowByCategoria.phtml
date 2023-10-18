@@ -1,7 +1,6 @@
 <?php require './templates/header.phtml' ?>
 
 <section id="ShowByCategoria"> 
-    <?php require './templates/carrousel.phtml' ?>
     <div class="container-fluid">
         <div class="row">
             <?php foreach($itemCat as $producto): ?>
@@ -10,6 +9,7 @@
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text"><?= $producto-> Producto ?> (<?= $producto->id_categoria?>)</p>
+                            <a href="showItem/<?=$producto->id_producto ?>" class="btn btn-secondary btn-lg">Buy Now</a>
                         </div>
                     </div>
                 </div>
