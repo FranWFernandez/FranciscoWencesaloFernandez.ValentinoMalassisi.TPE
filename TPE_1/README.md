@@ -1,8 +1,8 @@
-# FranciscoWencesaloFernandez.ValentinoMalassisi.TPE
+# FranciscoWenceslaoFernandez.TPE
 
 Trabajo Practico Especial Web 2
 
-Integrantes: Francisco Wenceslao Fernadez: frfernandez@alumnos.exa.unicen.edu.ar Valentino Malassisi: malassisivalen@gmail.com
+Francisco Wenceslao Fernadez: frfernandez@alumnos.exa.unicen.edu.ar
 
 Tematica: Tienda online de Calzados
 
